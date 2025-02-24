@@ -5,6 +5,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html[lang="ar"] * {
+    font-family: changa;
+}
 body{
     background-color: #080710;
 }
@@ -37,7 +40,7 @@ body{
         #ff512f,
         #f09819
     );
-    right: -30px;
+    right: -80px;
     bottom: -80px;
     animation: blurAnimation 0.5s ease-out;
 }
@@ -129,6 +132,23 @@ button:hover{
     color: white;
     border-color: white;
 }
+button.lang {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    text-align: center;
+    align-content: space-around;
+    font-family: "Scheherazade New", serif;
+    border-radius: 15px;
+}
+button.lang * {
+    margin: 0;
+    padding: 0;
+}
+
   
   @keyframes zoomOutAnimation {
     0% {
