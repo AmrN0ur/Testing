@@ -29,6 +29,7 @@ body{
     );
     left: -80px;
     top: -80px;
+    animation: blurAnimation 0.5s ease-out;
 }
 .shape:last-child{
     background: linear-gradient(
@@ -38,6 +39,7 @@ body{
     );
     right: -30px;
     bottom: -80px;
+    animation: blurAnimation 0.5s ease-out;
 }
 .page {
     width: 100%;
@@ -127,7 +129,7 @@ button:hover{
     color: white;
     border-color: white;
 }
-
+  
   @keyframes zoomOutAnimation {
     0% {
       transform: translate(-50%,-50%) translateZ(-250px);
@@ -145,3 +147,15 @@ button:hover{
       box-shadow: 0;
     }
 }
+  
+  @keyframes blurAnimation {
+    0% {
+      filter: blur(5px);
+    }
+    50% {
+      filter: blur(2px);
+    }
+    100% {
+      filter: blur(0);
+    }
+  }
