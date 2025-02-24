@@ -39,6 +39,13 @@ body{
     right: -30px;
     bottom: -80px;
 }
+.page {
+    width: 100%;
+    height: 100vh;
+    perspective: 200px;
+    transform-style: preserve-3d;
+    perspective-origin: center;
+}
 form{
     height: 470px;
     width: 400px;
@@ -52,6 +59,11 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+    animation: zoomOutAnimation 0.5s ease-out;
+    transition: box-shadow 0.5s ease-out;
+}
+form:hover{
+    box-shadow: 0 0 16px -10px white;
 }
 form *{
     font-family: 'Poppins',sans-serif;
@@ -115,3 +127,51 @@ button:hover{
     color: white;
     border-color: white;
 }
+
+@keyframes zoomOutAnimation {
+    0% {
+      transform: translateZ(-250px);
+      filter: blur(7px);
+      box-shadow: 0 0 35px -6px white;
+    }
+    50% {
+      transform: translateZ(30px);
+      filter: blur(6px);
+      box-shadow: 0 0 35px -3px white;
+    }
+    100% {
+      transform: translateZ(0);
+      filter: blur(0);
+      box-shadow: 0;
+    }
+  }
+  
+  @keyframes zoomOutAnimation {
+    0% {
+      transform: translate(-50%,-50%) translateZ(-250px);
+      filter: blur(7px);
+      box-shadow: 0 0 35px -6px white;
+    }
+    50% {
+      transform: translate(-50%,-50%) translateZ(30px);
+      filter: blur(6px);
+      box-shadow: 0 0 35px -3px white;
+    }
+    100% {
+      transform: translate(-50%,-50%) translateZ(0);
+      filter: blur(0);
+      box-shadow: 0;
+    }
+}
+  
+  @keyframes blurAnimation {
+    0% {
+      filter: blur(5px);
+    }
+    50% {
+      filter: blur(2px);
+    }
+    100% {
+      filter: blur(0);
+    }
+  }
